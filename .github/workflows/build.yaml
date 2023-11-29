@@ -6,10 +6,12 @@ on:
     - cron: '0 6 * * *'
 
 env:
-  IMAGE_NAME: menci/archlinuxarm
+  IMAGE_NAME: jguer/archlinuxarm
 
 jobs:
   build:
+    name: ${{ matrix.target.tag }}
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
@@ -18,8 +20,6 @@ jobs:
             package-group: base
           - tag: base-devel
             package-group: base base-devel
-    name: ${{ matrix.target.tag }}
-    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3

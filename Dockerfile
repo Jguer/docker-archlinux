@@ -1,4 +1,4 @@
-FROM alpine:20221110 AS bootstrapper
+FROM alpine:edge AS bootstrapper
 ARG TARGETARCH
 ARG PACKAGE_GROUP=base
 COPY files /files
