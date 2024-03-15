@@ -1,3 +1,5 @@
+SigLevel    = Optional
+
 [core]
 Include = /etc/pacman.d/mirrorlist
 
